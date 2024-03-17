@@ -1,11 +1,11 @@
 import { connecttoDB } from "@/database";
 import { User } from "@/model/user.model";
-import { NextRequest, NextResponse } from "next/server";
+import {  NextResponse } from "next/server";
 import bcryptjs from "bcryptjs";
 
 connecttoDB();
 
-export async function POST(req) {
+export async function POST(req) { //we are passing the state having the nameandpass
   try {
     const reqbody = await req.json();
     const { name, password } = reqbody; // corrected field name
